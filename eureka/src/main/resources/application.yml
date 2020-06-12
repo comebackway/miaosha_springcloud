@@ -1,0 +1,19 @@
+#将eureka server注册到本身 （将eureka注册到自身的http://localhost:8080/eureka/中去）
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    #加多了这个参数后 eureka自身的服务不会显示在eureka注册服务里边
+    register-with-eureka: false
+  #作用：不检测心跳失败，不显示警告信息
+  server:
+    enable-self-preservation: false
+
+#该服务注册到eureka中的名称
+spring:
+  application:
+    name: eureka
+
+#修改该项目的端口 因为配置8761端口作为该服务的服务注册中心ip，所以这里要把该项目（服务）改成8761，以便注册成功
+#server:
+#  port: 8762
