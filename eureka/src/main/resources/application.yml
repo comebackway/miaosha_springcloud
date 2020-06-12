@@ -8,6 +8,10 @@ eureka:
   #作用：不检测心跳失败，不显示警告信息
   server:
     enable-self-preservation: false
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.cloud.client.ip-address}:${spring.application.name}:${server.port}
+
 
 #该服务注册到eureka中的名称
 spring:
