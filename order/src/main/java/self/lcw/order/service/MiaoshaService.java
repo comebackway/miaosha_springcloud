@@ -3,12 +3,17 @@ package self.lcw.order.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import self.lcw.order.FeginClient.ProductClient;
+import self.lcw.order.dto.GoodsDetailDto;
 import self.lcw.order.dto.GoodsDto;
 import self.lcw.order.entity.MiaoshaOrder;
 import self.lcw.order.entity.OrderInfo;
 import self.lcw.order.entity.User;
+import self.lcw.order.redis.MiaoshaGoodsKey;
 import self.lcw.order.redis.MiaoshaKey;
 import self.lcw.order.redis.RedisService;
+import self.lcw.order.result.CodeMsg;
+import self.lcw.order.result.Result;
 
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
@@ -31,17 +36,21 @@ public class MiaoshaService {
     @Autowired
     RedisService redisService;
 
+    @Autowired
+    ProductClient productClient;
+
     @Transactional
-    public OrderInfo miaosha(User user, GoodsDto goodsDto){
+    public OrderInfo miaosha(User user, long goodsId){
         if (user == null){
             return null;
         }
 
-        // TODO 减库存
-        boolean success = false;
-
-
+        //减库存，调用product接口
+        boolean success = productClient.miaoshaReduceProduct(goodsId);
         if (success){
+            // 获取商品详情信息 调用product接口
+            GoodsDetailDto goodsDetailDto = productClient.detail(goodsId);
+            GoodsDto goodsDto = goodsDetailDto.getGoodsDto();
             //下订单  and  写秒杀订单
             OrderInfo orderInfo = orderService.createOrder(user,goodsDto);
             return orderInfo;
@@ -75,4 +84,8 @@ public class MiaoshaService {
         }
     }
 
+    public long reduceproductself(long goodsId) {
+        long stock = redisService.decr(MiaoshaGoodsKey.getGoodsStock,""+goodsId);
+        return stock;
+    }
 }

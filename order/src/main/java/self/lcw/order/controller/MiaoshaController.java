@@ -6,19 +6,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import self.lcw.order.entity.MiaoshaOrder;
+import self.lcw.order.entity.OrderInfo;
 import self.lcw.order.entity.User;
 import self.lcw.order.redis.RedisService;
 import self.lcw.order.result.CodeMsg;
 import self.lcw.order.result.Result;
 import self.lcw.order.service.MiaoshaService;
 import self.lcw.order.service.OrderService;
-
-
-import javax.imageio.ImageIO;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.awt.image.BufferedImage;
-import java.io.OutputStream;
 import java.util.HashMap;
 
 import java.util.Map;
@@ -68,16 +62,25 @@ public class MiaoshaController {
             return Result.error(CodeMsg.MIAOSHA_OVER);
         }
         //TODO 预减库存
-        long stock = -1 ;
+        //1. 为了提高性能 先在秒杀中预减库存，减少流量
+        long stock = miaoshaService.reduceproductself(goodsId);
         if (stock < 0){
             localOverMap.put(goodsId,true);
             return Result.error(CodeMsg.MIAOSHA_OVER);
         }
+
         //判断是否已秒杀
         MiaoshaOrder miaoshaOrder = orderService.getMiaoshaOrderByUserIdAndGoodsId(user.getId(),goodsId);
         if (miaoshaOrder != null){
             return Result.error(CodeMsg.MIAOSHA_REPEATE);
         }
+
+        OrderInfo orderInfo = miaoshaService.miaosha(user, goodsId);
+
+        //3. 下订单服务
+
+
+
         //TODO 入队操作
         /*
         MQMiaoshaMessage mqMiaoshaMessage = new MQMiaoshaMessage();
@@ -87,7 +90,7 @@ public class MiaoshaController {
         */
 
         //返回排队中提示
-        return Result.success(0);
+        return Result.success(1);
     }
 
 

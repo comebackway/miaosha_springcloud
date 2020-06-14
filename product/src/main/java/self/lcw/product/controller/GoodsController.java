@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.thymeleaf.context.IWebContext;
 import org.thymeleaf.context.WebContext;
@@ -71,7 +72,6 @@ public class GoodsController {
     @RequestMapping(value = "/detail/{goodsId}")
     @ResponseBody
     public Result<GoodsDetailDto> detail(Model model,
-                                         //取url路径中的值的方法
                                          @PathVariable("goodsId")long goodsId,
                                          HttpServletRequest request, HttpServletResponse response){
 
@@ -101,5 +101,49 @@ public class GoodsController {
         goodsDetailDto.setRemainSeconds(remainSeconds);
         goodsDetailDto.setMiaoshaStatus(miaoshaStatus);
         return Result.success(goodsDetailDto);
+    }
+
+
+
+    @RequestMapping(value = "/reduce")
+    @ResponseBody
+    public Boolean reduce(@RequestParam("goodsId") long goodsId){
+        GoodsDto goodsDto = new GoodsDto();
+        goodsDto.setId(goodsId);
+        boolean success = goodsService.reduceStock(goodsDto);
+        return success;
+    }
+
+
+    @RequestMapping(value = "/detail")
+    @ResponseBody
+    public GoodsDetailDto detail(@RequestParam("goodsId")long goodsId){
+
+        GoodsDto goods = goodsService.getGoodsDtoByGoodsId(goodsId);
+
+        //对秒杀时间进行判断
+        long startAt = goods.getStartDate().getTime();
+        long endAt = goods.getEndDate().getTime();
+        long now = System.currentTimeMillis();
+
+        //秒杀状态
+        int miaoshaStatus = 0;
+        //秒杀倒计时
+        int remainSeconds = 0;
+        if (now<startAt){
+            miaoshaStatus = 0;
+            remainSeconds = (int)(startAt - now)/1000;
+        }else if (now>endAt){
+            miaoshaStatus = 2;
+            remainSeconds = -1;
+        }else{
+            miaoshaStatus = 1;
+            remainSeconds = 0;
+        }
+        GoodsDetailDto goodsDetailDto = new GoodsDetailDto();
+        goodsDetailDto.setGoodsDto(goods);
+        goodsDetailDto.setRemainSeconds(remainSeconds);
+        goodsDetailDto.setMiaoshaStatus(miaoshaStatus);
+        return goodsDetailDto;
     }
 }
