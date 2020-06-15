@@ -196,8 +196,10 @@ public class RedisService {
         jedisPoolConfig.setMaxIdle(redisConfig.getPoolMaxIdle());
         jedisPoolConfig.setMaxTotal(redisConfig.getPoolMaxTotal());
         jedisPoolConfig.setMaxWaitMillis(redisConfig.getPoolMaxWait() * 1000);
+        jedisPoolConfig.setTestOnCreate(false);
         JedisPool jedisPool = new JedisPool(jedisPoolConfig,redisConfig.getHost(),redisConfig.getPort(),
                 redisConfig.getTimeout()*1000);
+
         return jedisPool;
     }
 }

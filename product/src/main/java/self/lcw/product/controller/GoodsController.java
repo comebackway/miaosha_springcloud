@@ -5,10 +5,7 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.thymeleaf.context.IWebContext;
 import org.thymeleaf.context.WebContext;
 import org.thymeleaf.spring5.view.ThymeleafViewResolver;
@@ -145,5 +142,15 @@ public class GoodsController {
         goodsDetailDto.setRemainSeconds(remainSeconds);
         goodsDetailDto.setMiaoshaStatus(miaoshaStatus);
         return goodsDetailDto;
+    }
+
+
+    @GetMapping(value = "/showList")
+    @ResponseBody
+    public List<GoodsDto> showList(Model model, HttpServletResponse response, HttpServletRequest request){
+
+        List<GoodsDto> goodsDtoList = goodsService.listGoodsDto();
+
+        return goodsDtoList;
     }
 }

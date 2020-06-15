@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 //该注释的作用是读取application.properties文件中以redis作为前缀的配置项
-@ConfigurationProperties(prefix = "redis")
+@ConfigurationProperties(prefix = "spring.redis")
 public class RedisConfig {
     private String host;
     private int port;

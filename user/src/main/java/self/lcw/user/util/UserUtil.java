@@ -2,7 +2,7 @@ package self.lcw.user.util;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
-import self.lcw01.miaosha.entity.User;
+import self.lcw.user.entity.User;
 
 import java.io.*;
 import java.net.HttpURLConnection;

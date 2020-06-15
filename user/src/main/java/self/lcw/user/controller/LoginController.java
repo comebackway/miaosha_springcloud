@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import self.lcw.user.result.Result;
 import self.lcw.user.service.UserService;
-import self.lcw.vo.LoginVo;
+import self.lcw.user.vo.LoginVo;
 
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
