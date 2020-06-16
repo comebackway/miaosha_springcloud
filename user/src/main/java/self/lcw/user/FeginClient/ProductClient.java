@@ -18,7 +18,7 @@ public interface ProductClient {
     @PostMapping("/product/reduce")
     Boolean miaoshaReduceProduct(@RequestParam("goodsId") long goodsId);
 
-    @PostMapping("/product/detail")
+    @GetMapping("/product/goods/detail")
     GoodsDetailDto detail(@RequestParam("goodsId") long goodsId);
 
     @GetMapping("/product/goods/showList")

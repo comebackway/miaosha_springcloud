@@ -31,20 +31,7 @@ public class LoginController {
     @ResponseBody
     //@Valid注解作用：该参数需要符合jsr303参数校验规则
     public Result<String> doLogin(HttpServletResponse response, @Valid LoginVo loginVo){
-        //参数校验
-        /*
-        String passInput = loginVo.getPassword();
-        String mobile = loginVo.getMobile();
-        if (StringUtils.isEmpty(passInput)){
-            return Result.error(CodeMsg.PASSWORD_EMPTY);
-        }
-        if (StringUtils.isEmpty(mobile)){
-            return Result.error(CodeMsg.MOBILE_EMPTY);
-        }
-        if (!ValidatorUtil.isMobile(mobile)){
-            return Result.error(CodeMsg.MOBILE_ERROR);
-        }
-        */
+
         String token = userService.login(response,loginVo);
         return Result.success(token);
     }

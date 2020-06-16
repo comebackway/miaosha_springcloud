@@ -6,7 +6,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import self.lcw.order.dto.GoodsDetailDto;
+import self.lcw.order.dto.GoodsDto;
 import self.lcw.order.result.Result;
+
+import java.util.List;
 
 @FeignClient(name = "product")
 public interface ProductClient {
@@ -19,4 +22,10 @@ public interface ProductClient {
 
     @PostMapping("/product/detail")
     GoodsDetailDto detail(@RequestParam("goodsId") long goodsId);
+
+    @PostMapping("/product/basic")
+    GoodsDto basic(@RequestParam("goodsId") long goodsId);
+
+    @GetMapping("/product/goods/showList")
+    List<GoodsDto> showList();
 }

@@ -2,21 +2,36 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c000a3b-f101-415d-b8c9-50276ca9d844" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/self/lcw/user/FeginClient/ProductClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/self/lcw/user/controller/GoodsController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/self/lcw/user/controller/MiaoshaController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/self/lcw/user/service/GoodsClientService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../order/src/main/java/self/lcw/order/redis/RedisConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../order/src/main/java/self/lcw/order/redis/RedisConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../order/src/main/java/self/lcw/order/redis/GoodsKey.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/self/lcw/user/FeginClient/OrderClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/self/lcw/user/Interceptor/AccessLimitInterceptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/self/lcw/user/ThreadLocalContext/UserContext.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/self/lcw/user/config/UserArgumentResolver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/self/lcw/user/config/WebConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/self/lcw/user/controller/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../order/src/main/java/self/lcw/order/FeginClient/ProductClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/../order/src/main/java/self/lcw/order/FeginClient/ProductClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../order/src/main/java/self/lcw/order/controller/MiaoshaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../order/src/main/java/self/lcw/order/controller/MiaoshaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../order/src/main/java/self/lcw/order/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../order/src/main/java/self/lcw/order/controller/OrderController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../order/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../order/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../product/src/main/java/self/lcw/product/controller/GoodsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../product/src/main/java/self/lcw/product/controller/GoodsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../product/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../product/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/self/lcw/user/FeginClient/ProductClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/self/lcw/user/FeginClient/ProductClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/self/lcw/user/controller/GoodsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/self/lcw/user/controller/GoodsController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/self/lcw/user/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/self/lcw/user/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/self/lcw/user/controller/UserController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/self/lcw/user/redis/RedisConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/self/lcw/user/redis/RedisConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/self/lcw/user/redis/RedisService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/self/lcw/user/redis/RedisService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/self/lcw/user/util/UserUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/self/lcw/user/util/UserUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/self/lcw/user/controller/MiaoshaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/self/lcw/user/controller/MiaoshaController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/goods_detail.htm" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/goods_detail.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/order_detail.htm" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/order_detail.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/goods_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/goods_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/self/lcw/user/FeginClient/ProductClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/self/lcw/user/FeginClient/ProductClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/self/lcw/user/controller/GoodsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/self/lcw/user/controller/GoodsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/self/lcw/user/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/self/lcw/user/controller/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/self/lcw/user/controller/MiaoshaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/self/lcw/user/controller/MiaoshaController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/goods_detail.htm" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/goods_detail.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/order_detail.htm" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/static/order_detail.htm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/templates/goods_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/templates/goods_list.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +42,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -54,11 +70,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="self.lcw.user.ThreadLocalContext" />
+      <recent name="self.lcw.user.Interceptor" />
+      <recent name="self.lcw.user.controller" />
       <recent name="self.lcw.user.FeginClient" />
       <recent name="self.lcw.user.vo" />
-      <recent name="self.lcw.vo" />
-      <recent name="self.lcw.user.service" />
-      <recent name="self.lcw.user.access" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\JavaProject\spring cloud\user\src\main\java\self\lcw\user" />
@@ -101,7 +117,8 @@
       <option name="presentableId" value="Default" />
       <updated>1592103022715</updated>
       <workItem from="1592103031770" duration="2345000" />
-      <workItem from="1592221266201" duration="3765000" />
+      <workItem from="1592221266201" duration="4361000" />
+      <workItem from="1592304322656" duration="7228000" />
     </task>
     <servers />
   </component>
@@ -109,42 +126,42 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="207" y="136" width="1151" height="687" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1592222575898">
+    <state x="207" y="136" width="1151" height="687" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1592308289240">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state x="207" y="136" width="1151" height="687" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1500.960@0.0.1500.960" timestamp="1592222575898" />
-    <state width="1444" height="253" key="GridCell.Tab.0.bottom" timestamp="1592225219060">
+    <state x="207" y="136" width="1151" height="687" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1500.960@0.0.1500.960" timestamp="1592308289240" />
+    <state width="1444" height="253" key="GridCell.Tab.0.bottom" timestamp="1592311756734">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1444" height="253" key="GridCell.Tab.0.bottom/0.0.1500.960@0.0.1500.960" timestamp="1592225219060" />
-    <state width="1444" height="253" key="GridCell.Tab.0.center" timestamp="1592225219060">
+    <state width="1444" height="253" key="GridCell.Tab.0.bottom/0.0.1500.960@0.0.1500.960" timestamp="1592311756734" />
+    <state width="1444" height="253" key="GridCell.Tab.0.center" timestamp="1592311756733">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1444" height="253" key="GridCell.Tab.0.center/0.0.1500.960@0.0.1500.960" timestamp="1592225219060" />
-    <state width="1444" height="253" key="GridCell.Tab.0.left" timestamp="1592225219060">
+    <state width="1444" height="253" key="GridCell.Tab.0.center/0.0.1500.960@0.0.1500.960" timestamp="1592311756733" />
+    <state width="1444" height="253" key="GridCell.Tab.0.left" timestamp="1592311756733">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1444" height="253" key="GridCell.Tab.0.left/0.0.1500.960@0.0.1500.960" timestamp="1592225219060" />
-    <state width="1444" height="253" key="GridCell.Tab.0.right" timestamp="1592225219060">
+    <state width="1444" height="253" key="GridCell.Tab.0.left/0.0.1500.960@0.0.1500.960" timestamp="1592311756733" />
+    <state width="1444" height="253" key="GridCell.Tab.0.right" timestamp="1592311756733">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1444" height="253" key="GridCell.Tab.0.right/0.0.1500.960@0.0.1500.960" timestamp="1592225219060" />
-    <state width="1444" height="253" key="GridCell.Tab.1.bottom" timestamp="1592225219061">
+    <state width="1444" height="253" key="GridCell.Tab.0.right/0.0.1500.960@0.0.1500.960" timestamp="1592311756733" />
+    <state width="1444" height="253" key="GridCell.Tab.1.bottom" timestamp="1592311756734">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1444" height="253" key="GridCell.Tab.1.bottom/0.0.1500.960@0.0.1500.960" timestamp="1592225219061" />
-    <state width="1444" height="253" key="GridCell.Tab.1.center" timestamp="1592225219060">
+    <state width="1444" height="253" key="GridCell.Tab.1.bottom/0.0.1500.960@0.0.1500.960" timestamp="1592311756734" />
+    <state width="1444" height="253" key="GridCell.Tab.1.center" timestamp="1592311756734">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1444" height="253" key="GridCell.Tab.1.center/0.0.1500.960@0.0.1500.960" timestamp="1592225219060" />
-    <state width="1444" height="253" key="GridCell.Tab.1.left" timestamp="1592225219060">
+    <state width="1444" height="253" key="GridCell.Tab.1.center/0.0.1500.960@0.0.1500.960" timestamp="1592311756734" />
+    <state width="1444" height="253" key="GridCell.Tab.1.left" timestamp="1592311756734">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1444" height="253" key="GridCell.Tab.1.left/0.0.1500.960@0.0.1500.960" timestamp="1592225219060" />
-    <state width="1444" height="253" key="GridCell.Tab.1.right" timestamp="1592225219061">
+    <state width="1444" height="253" key="GridCell.Tab.1.left/0.0.1500.960@0.0.1500.960" timestamp="1592311756734" />
+    <state width="1444" height="253" key="GridCell.Tab.1.right" timestamp="1592311756734">
       <screen x="0" y="0" width="1500" height="960" />
     </state>
-    <state width="1444" height="253" key="GridCell.Tab.1.right/0.0.1500.960@0.0.1500.960" timestamp="1592225219061" />
+    <state width="1444" height="253" key="GridCell.Tab.1.right/0.0.1500.960@0.0.1500.960" timestamp="1592311756734" />
     <state x="431" y="213" width="637" height="534" key="find.popup" timestamp="1592223493779">
       <screen x="0" y="0" width="1500" height="960" />
     </state>

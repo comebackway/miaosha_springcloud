@@ -4,16 +4,20 @@ import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.thymeleaf.context.IWebContext;
 import org.thymeleaf.context.WebContext;
 import org.thymeleaf.spring5.view.ThymeleafViewResolver;
+import self.lcw.user.FeginClient.ProductClient;
+import self.lcw.user.dto.GoodsDetailDto;
 import self.lcw.user.dto.GoodsDto;
 import self.lcw.user.entity.User;
 import self.lcw.user.redis.GoodsKey;
 import self.lcw.user.redis.RedisService;
+import self.lcw.user.result.Result;
 import self.lcw.user.service.GoodsClientService;
 
 import javax.servlet.http.HttpServletRequest;
@@ -32,6 +36,9 @@ public class GoodsController {
 
     @Autowired
     ThymeleafViewResolver thymeleafViewResolver;
+
+    @Autowired
+    ProductClient productClient;
 
 
     @RequestMapping(value = "/to_list",produces = "text/html")
@@ -54,5 +61,18 @@ public class GoodsController {
             redisService.set(GoodsKey.getGoodsList,"",html);
         }
         return html;
+    }
+
+    @RequestMapping(value = "/detail/{goodsId}")
+    @ResponseBody
+    public Result<GoodsDetailDto> detail(@PathVariable("goodsId")long goodsId){
+
+        GoodsDetailDto goodsDetailDto = productClient.detail(goodsId);
+        if (goodsDetailDto != null){
+            return Result.success(goodsDetailDto);
+        }
+        else {
+            return Result.error(null);
+        }
     }
 }

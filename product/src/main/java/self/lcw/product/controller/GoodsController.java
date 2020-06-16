@@ -112,7 +112,7 @@ public class GoodsController {
     }
 
 
-    @RequestMapping(value = "/detail")
+    @GetMapping(value = "/detail")
     @ResponseBody
     public GoodsDetailDto detail(@RequestParam("goodsId")long goodsId){
 
@@ -152,5 +152,14 @@ public class GoodsController {
         List<GoodsDto> goodsDtoList = goodsService.listGoodsDto();
 
         return goodsDtoList;
+    }
+
+    @GetMapping(value = "/basic")
+    @ResponseBody
+    public GoodsDto basic(@RequestParam("goodsId") long goodsId){
+
+        GoodsDto goodsDto = goodsService.getGoodsDtoByGoodsId(goodsId);
+
+        return goodsDto;
     }
 }

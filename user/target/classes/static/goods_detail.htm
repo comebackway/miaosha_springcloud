@@ -4,19 +4,19 @@
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
     <title>商品详情</title>
     <!-- jquery -->
-    <script type="text/javascript" src="/miaosha/js/jquery.min.js" )></script>
+    <script type="text/javascript" src="/user/js/jquery.min.js" )></script>
     <!-- bootstrap -->
-    <link rel="stylesheet" type="text/css" href="/miaosha/bootstrap/css/bootstrap.min.css"/>
-    <script type="text/javascript" src="/miaosha/bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="/user/bootstrap/css/bootstrap.min.css"/>
+    <script type="text/javascript" src="/user/bootstrap/js/bootstrap.min.js"></script>
     <!-- jquery-validator -->
-    <script type="text/javascript" src="/miaosha/jquery-validation/jquery.validate.min.js"></script>
-    <script type="text/javascript" src="/miaosha/jquery-validation/localization/messages_zh.min.js"></script>
+    <script type="text/javascript" src="/user/jquery-validation/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="/user/jquery-validation/localization/messages_zh.min.js"></script>
     <!-- layer -->
-    <script type="text/javascript" src="/miaosha/layer/layer.js"></script>
+    <script type="text/javascript" src="/user/layer/layer.js"></script>
     <!-- md5.js -->
-    <script type="text/javascript" src="/miaosha/js/md5.min.js"></script>
+    <script type="text/javascript" src="/user/js/md5.min.js"></script>
     <!-- common.js -->
-    <script type="text/javascript" src="/miaosha/js/common.js"></script>
+    <script type="text/javascript" src="/user/js/common.js"></script>
 </head>
 <body>
 <div class="panel panel-default">
@@ -49,21 +49,7 @@
             <!--            </td>-->
 
             <td>
-                <!--
-                <button class="btn btn-primary btn-block" type="button" id="buyButton" onclick="doMiaosha()">立即秒杀
-                -->
-                <!-- 这里div的作用是将img input和秒杀按钮都放在同一行 -->
-                <div class="row">
-                    <div class="form-inline">
-                        <img id="verifyCodeImg" width="80" height="32" style="display: none" onclick="refreshVerifyCode()"/>
-                        <input id="verifyCode" class="form-control" style="display: none"/>
-                        <!-- 改造V3.0 隐藏秒杀接口-->
-                        <button class="btn btn-primary" type="button" id="buyButton"
-                                onclick="getMiaoshaPath()">
-                            立即秒杀
-                        </button>
-                    </div>
-                </div>
+                <button class="btn btn-primary btn-block" type="button" id="buyButton" onclick="doMiaosha()">立即秒杀</button>
                 <input type="hidden" name="goodsId" id="goodsId">
             </td>
 
@@ -144,9 +130,9 @@
     /*
     V3.0 隐藏秒杀url 新增动态的参数作为url的一部分 后台会校验这个url里的参数是否是该次该用户存在redis中的参数
      */
-    function doMiaosha(path) {
+    function doMiaosha() {
         $.ajax({
-            url: "/" + window.location.pathname.split("/")[1] + "/miaosha/" + path + "/do_miaosha",
+            url: "/" + window.location.pathname.split("/")[1] + "/miaosha" + "/do_miaosha",
             type: "POST",
             data: {
                 goodsId: $('#goodsId').val(),
@@ -154,8 +140,8 @@
             success: function (data) {
                 if (data.code == 0) {
                     //因为使用rabbitmq异步 所以这里要将直接跳转改造成轮询服务器返回的订单状态
-                    //window.location.href="/order_detail.htm?orderId=" + data.data.id;
-                    getMiaoshaResult($('#goodsId').val());
+                    window.location.href="/order_detail.htm?orderId=" + data.data.id;
+                    //getMiaoshaResult($('#goodsId').val());
                 }else{
                     layer.msg(data.msg);
                 }
@@ -180,6 +166,7 @@
                 if (data.code == 0) {
                     render(data.data);
                 } else {
+                    alert(data.msg);
                     layer.msg(data.msg);
                 }
             },
@@ -230,14 +217,14 @@
                 clearTimeout(timeout);
             }
             $("#miaoshaTip").html("秒杀进行中");
-            $("#verifyCodeImg").attr("src","/" +  window.location.pathname.split("/")[1] + "/miaosha/verifyCode?goodsId="+$("#goodsId").val());
-            $("#verifyCodeImg").show();
-            $("#verifyCode").show();
+            //$("#verifyCodeImg").attr("src","/" +  window.location.pathname.split("/")[1] + "/user/verifyCode?goodsId="+$("#goodsId").val());
+            //$("#verifyCodeImg").show();
+            //$("#verifyCode").show();
         } else {
             $("#buyButton").attr("disabled", true);
             $("#miaoshaTip").html("秒杀已结束");
-            $("#verifyCodeImg").hide();
-            $("#verifyCode").hide();
+            //$("#verifyCodeImg").hide();
+            //$("#verifyCode").hide();
         }
     }
 
@@ -246,7 +233,7 @@
         因为浏览器对图片是有缓存的，所以如果要做到刷新页面 就要每次的url都不一样，浏览器才会更新图片
         如果一直访问同一个url 浏览器是会缓存图片的
          */
-        $("#verifyCodeImg").attr("src","/" +  window.location.pathname.split("/")[1] + "/miaosha/verifyCode?goodsId="+$("#goodsId").val() + "&timestamp=" + new Date().getTime());
+        $("#verifyCodeImg").attr("src","/" +  window.location.pathname.split("/")[1] + "/user/verifyCode?goodsId="+$("#goodsId").val() + "&timestamp=" + new Date().getTime());
     }
 
 
