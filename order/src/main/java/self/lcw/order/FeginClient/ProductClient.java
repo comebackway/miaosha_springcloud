@@ -17,13 +17,13 @@ public interface ProductClient {
     @GetMapping("/product/msg")
     String productMsg();
 
-    @PostMapping("/product/reduce")
+    @PostMapping("/product/goods/reduce")
     Boolean miaoshaReduceProduct(@RequestParam("goodsId") long goodsId);
 
-    @PostMapping("/product/detail")
+    @GetMapping("/product/goods/detail")
     GoodsDetailDto detail(@RequestParam("goodsId") long goodsId);
 
-    @PostMapping("/product/basic")
+    @GetMapping("/product/goods/basic")
     GoodsDto basic(@RequestParam("goodsId") long goodsId);
 
     @GetMapping("/product/goods/showList")

@@ -5,9 +5,9 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: root
-    url: jdbc:mysql://39.108.208.76:3316/miaosha?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://119.23.221.215:3316/miaosha?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai
   redis:
-    host: 39.108.208.76
+    host: 119.23.221.215
     port: 6379
     timeout: 3
     pool-max-total: 100

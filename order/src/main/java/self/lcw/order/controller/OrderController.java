@@ -10,8 +10,6 @@ import self.lcw.order.dto.GoodsDto;
 import self.lcw.order.dto.OrderDetailDto;
 import self.lcw.order.entity.OrderInfo;
 import self.lcw.order.entity.User;
-import self.lcw.order.result.CodeMsg;
-import self.lcw.order.result.Result;
 import self.lcw.order.service.OrderService;
 
 @Controller

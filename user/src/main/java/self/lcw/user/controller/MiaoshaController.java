@@ -23,10 +23,8 @@ public class MiaoshaController {
     public Result<OrderInfo> doMiaosha(User user, @RequestParam("goodsId") long goodsId){
         OrderInfo orderInfo = orderClient.doMiaosha(user,goodsId);
         if (orderInfo!=null){
-            System.out.println("1111111111111111     "+orderInfo.getId());
         return Result.success(orderInfo);}
         else {
-            System.out.println("2222222222222     ");
             return Result.error(null);
         }
     }

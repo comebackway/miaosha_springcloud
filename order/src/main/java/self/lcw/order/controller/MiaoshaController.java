@@ -70,8 +70,8 @@ public class MiaoshaController implements InitializingBean {
      */
     @PostMapping(value = "/do_miaosha")
     @ResponseBody
-    //将返回类型从Result<OrderInfo> 变成 Result<Integer>  返回状态（1：表示排队中）
-    public OrderInfo miaosha(User user, @RequestParam("goodsId") long goodsId){
+    public OrderInfo miaosha(@RequestBody User user, @RequestParam("goodsId") long goodsId){
+
         if (user == null){
             return null;
         }
@@ -84,19 +84,24 @@ public class MiaoshaController implements InitializingBean {
         if (over){
             return null;
         }
-        //TODO 预减库存
-        //1. 为了提高性能 先在秒杀中预减库存，减少流量
+
+
         long stock = miaoshaService.reduceproductself(goodsId);
+
         if (stock < 0){
             localOverMap.put(goodsId,true);
             return null;
         }
 
         //判断是否已秒杀
+
+
         MiaoshaOrder miaoshaOrder = orderService.getMiaoshaOrderByUserIdAndGoodsId(user.getId(),goodsId);
         if (miaoshaOrder != null){
             return null;
         }
+
+
 
         OrderInfo orderInfo = miaoshaService.miaosha(user, goodsId);
 

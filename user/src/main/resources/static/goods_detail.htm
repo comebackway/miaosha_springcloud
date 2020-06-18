@@ -140,7 +140,7 @@
             success: function (data) {
                 if (data.code == 0) {
                     //因为使用rabbitmq异步 所以这里要将直接跳转改造成轮询服务器返回的订单状态
-                    window.location.href="/order_detail.htm?orderId=" + data.data.id;
+                    window.location.href= "/" + window.location.pathname.split("/")[1] + "/order_detail.htm?orderId=" + data.data.id;
                     //getMiaoshaResult($('#goodsId').val());
                 }else{
                     layer.msg(data.msg);

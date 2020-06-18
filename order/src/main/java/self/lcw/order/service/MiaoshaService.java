@@ -9,6 +9,7 @@ import self.lcw.order.dto.GoodsDto;
 import self.lcw.order.entity.MiaoshaOrder;
 import self.lcw.order.entity.OrderInfo;
 import self.lcw.order.entity.User;
+import self.lcw.order.redis.GoodsKey;
 import self.lcw.order.redis.MiaoshaGoodsKey;
 import self.lcw.order.redis.MiaoshaKey;
 import self.lcw.order.redis.RedisService;
@@ -85,7 +86,7 @@ public class MiaoshaService {
     }
 
     public long reduceproductself(long goodsId) {
-        long stock = redisService.decr(MiaoshaGoodsKey.getGoodsStock,""+goodsId);
+        long stock = redisService.decr(GoodsKey.getGoodsStock,""+goodsId);
         return stock;
     }
 }

@@ -102,7 +102,7 @@ public class GoodsController {
 
 
 
-    @RequestMapping(value = "/reduce")
+    @PostMapping(value = "/reduce")
     @ResponseBody
     public Boolean reduce(@RequestParam("goodsId") long goodsId){
         GoodsDto goodsDto = new GoodsDto();
