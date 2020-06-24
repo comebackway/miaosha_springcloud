@@ -1,0 +1,41 @@
+spring:
+  application:
+    name: user
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: root
+    url: jdbc:mysql://39.108.71.88:3316/miaosha?useUnicode=true&characterEncoding=utf8&allowMultiQueries=true&useLegacyDatetimeCode=false&serverTimezone=Asia/Shanghai
+  redis:
+    host: 39.108.71.88
+    port: 6379
+    timeout: 3
+    pool-max-total: 100
+    pool-max-wait: 50
+    pool-max-idle: 50
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+  resources:
+    static-locations: classpath:/static/
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+    eureka-server-connect-timeout-seconds: 60000
+
+mybatis:
+  type-aliases-package: self.lcw.user.server.entity,self.lcw.user.common
+  configuration:
+    map-underscore-to-camel-case: true
+    default-fetch-size: 100
+    default-statement-timeout: 30000
+  mapper-locations: classpath:/user/dao/*.xml
+
+server:
+  servlet:
+    context-path: /user
+feign:
+  httpclient:
+    connection-timeout: 60000
