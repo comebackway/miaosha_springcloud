@@ -18,6 +18,11 @@ spring:
     suffix: .html
   resources:
     static-locations: classpath:/static/
+  rabbitmq:
+    host: 120.78.92.8
+    port: 5672
+    username: guest
+    password: guest
 
 eureka:
   client:
