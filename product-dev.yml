@@ -35,4 +35,4 @@ mybatis:
 
 server:
   servlet:
-    context-path: /product
+    context-path: /product_dev
