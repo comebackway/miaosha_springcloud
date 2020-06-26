@@ -42,4 +42,4 @@ server:
   servlet:
     context-path: /product
     
-env: dev5
+env: dev7
