@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: product
+  #通过统一配置中心读取配置文件，读取{name}-{profile}.yml的配置文件
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        #指向读取的配置中心的名字
+        service-id: CONFIG
+      profile: dev
+
+    bus:
+      id: ${vcap.application.name:${spring.application.name:application}}:${vcap.application.instance_index:${spring.cloud.config.profile:${local.server.port:${server:port:0}}}}:${vcap.application.instance_id:${random.value}}

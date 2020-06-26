@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: config
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/comebackway/miaosha_springcloud
+          username: comebackway
+          password: yinghuayuan31302
+          #该配置的作用是 远程读取git的仓库里边的内容到本地
+          basedir: D:\JavaProject\spring cloud\config\basedir
+      label : master
+  rabbitmq:
+    host: 120.78.92.8
+    port: 5672
+    username: guest
+    password: guest
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+
+#暴露了全部被监听路径
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
