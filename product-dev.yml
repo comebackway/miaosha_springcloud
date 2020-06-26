@@ -36,3 +36,5 @@ mybatis:
 server:
   servlet:
     context-path: /product
+    
+env: dev
