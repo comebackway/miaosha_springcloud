@@ -106,7 +106,7 @@
     function getMiaoshaResult(goodsId) {
         g_showLoading();
         $.ajax({
-            url: "/" + window.location.pathname.split("/")[1] + "/product/result",
+            url: "/" + window.location.pathname.split("/")[1] + "/miaosha/result",
             type: "GET",
             data: {
                 goodsId: goodsId,
@@ -116,12 +116,14 @@
                     var result = data.data;
                     if (result < 0) {
                         layer.msg("秒杀失败");
-                    } else if (result == 0) {
+                    } else if (result == 0 || result == "0") {
                         //继续轮询
                         setTimeout(function () {
                             getMiaoshaResult(goodsId);
                         }, 1000);
                     } else {
+                        console.log("============");
+                        console.log(result);
                         layer.confirm("秒杀成功!是否查看订单", {btn: ["确定", "取消"]},
                             function () {
                                 window.location.href = "/" + window.location.pathname.split("/")[1] + "/order_detail.htm?orderId=" + result;
@@ -151,12 +153,14 @@
                 goodsId: $('#goodsId').val(),
             },
             success: function (data) {
-                if (data.code == 0) {
+                console.log("lalala");
+                console.log(data);
+                if (data.data == "1") {
                     //因为使用rabbitmq异步 所以这里要将直接跳转改造成轮询服务器返回的订单状态
-                    window.location.href = "/" + window.location.pathname.split("/")[1] + "/order_detail.htm?orderId=" + data.data.id;
-                    //getMiaoshaResult($('#goodsId').val());
+                    //window.location.href = "/" + window.location.pathname.split("/")[1] + "/order_detail.htm?orderId=" + data.data.id;
+                    getMiaoshaResult($('#goodsId').val());
                 }else{
-                    layer.msg(data.msg);
+                    layer.msg("秒杀失败");
                 }
             },
             error: function () {

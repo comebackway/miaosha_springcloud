@@ -10,9 +10,11 @@ spring:
           password: yinghuayuan31302
           #该配置的作用是 远程读取git的仓库里边的内容到本地
           basedir: D:\JavaProject\spring cloud\config\basedir
+          #遇到脏数据时会强制清空刷新缓存
+          force-pull: true
       label : master
   rabbitmq:
-    host: 120.78.92.8
+    host: 120.78.148.129
     port: 5672
     username: guest
     password: guest

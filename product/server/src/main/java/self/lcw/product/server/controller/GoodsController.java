@@ -1,7 +1,9 @@
 package self.lcw.product.server.controller;
 
 
+import com.alibaba.fastjson.JSON;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -33,6 +35,9 @@ public class GoodsController {
     //渲染thymeleaf页面的框架
     @Autowired
     ThymeleafViewResolver thymeleafViewResolver;
+
+    @Autowired
+    AmqpTemplate amqpTemplate;
 
 
     // produces 指定返回的内容是html
@@ -107,6 +112,36 @@ public class GoodsController {
         GoodsDto goodsDto = new GoodsDto();
         goodsDto.setId(goodsId);
         boolean success = goodsService.reduceStock(goodsDto);
+        //发送消息 减库存成功
+        if (success) {
+            goodsDto = goodsService.getGoodsDtoByGoodsId(goodsId);
+            //对秒杀时间进行判断
+            long startAt = goodsDto.getStartDate().getTime();
+            long endAt = goodsDto.getEndDate().getTime();
+            long now = System.currentTimeMillis();
+
+            //秒杀状态
+            int miaoshaStatus = 0;
+            //秒杀倒计时
+            int remainSeconds = 0;
+            if (now<startAt){
+                miaoshaStatus = 0;
+                remainSeconds = (int)(startAt - now)/1000;
+            }else if (now>endAt){
+                miaoshaStatus = 2;
+                remainSeconds = -1;
+            }else{
+                miaoshaStatus = 1;
+                remainSeconds = 0;
+            }
+            GoodsDetailDto goodsDetailDto = new GoodsDetailDto();
+            goodsDetailDto.setGoodsDto(goodsDto);
+            goodsDetailDto.setRemainSeconds(remainSeconds);
+            goodsDetailDto.setMiaoshaStatus(miaoshaStatus);
+            amqpTemplate.convertAndSend("productInfo", JSON.toJSONString(goodsDetailDto));
+        }else{
+            amqpTemplate.convertAndSend("productInfo", "null");
+        }
         return success;
     }
 

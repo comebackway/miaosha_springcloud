@@ -31,10 +31,16 @@ public class MiaoshaService {
     ProductClient productClient;
 
     @Transactional
-    public OrderDetailDto miaosha(long goodsId){
+    public Integer miaosha(long goodsId){
 
         //减库存，调用product接口
         boolean success = productClient.miaoshaReduceProduct(goodsId);
+        if (success){
+            return 1;
+        }else {
+            return 0;
+        }
+        /*
         if (success){
             // 获取商品详情信息 调用product接口
             GoodsDetailDto goodsDetailDto = productClient.detail(goodsId);
@@ -59,6 +65,7 @@ public class MiaoshaService {
             // TODO 设置秒杀完毕状态
             return null;
         }
+        */
     }
 
 

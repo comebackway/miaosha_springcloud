@@ -28,6 +28,7 @@ public class OrderController {
         if (orderDetailDto == null){
             return Result.error(CodeMsg.ORDER_NULL);
         }
+        System.out.println(orderDetailDto);
         return Result.success(orderDetailDto);
     }
 }

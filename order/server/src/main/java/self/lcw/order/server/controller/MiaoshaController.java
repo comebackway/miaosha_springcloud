@@ -71,7 +71,7 @@ public class MiaoshaController implements InitializingBean {
      */
     @PostMapping(value = "/do_miaosha")
     @ResponseBody
-    public OrderDetailDto miaosha(@RequestParam("goodsId") long goodsId){
+    public Integer miaosha(@RequestParam("goodsId") long goodsId){
 
         /*
         v2.0 将库存放在redis中执行，使用rabbitmq对请求进行异步处理
@@ -100,9 +100,9 @@ public class MiaoshaController implements InitializingBean {
 
 
 
-        OrderDetailDto orderDetailDto = miaoshaService.miaosha(goodsId);
+        Integer res = miaoshaService.miaosha(goodsId);
 
-        return orderDetailDto;
+        return res;
     }
 
 

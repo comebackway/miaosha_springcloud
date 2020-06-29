@@ -17,6 +17,18 @@
 
     <dependencies>
 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-amqp</artifactId>
+        </dependency>
+
+        <!--使用spring cloud stream 结合rabbitmq进一步封装消息队列，做到无感知层面-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-stream-rabbit</artifactId>
+        </dependency>
+
+
         <!--统一配置中心，读取配置文件-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>

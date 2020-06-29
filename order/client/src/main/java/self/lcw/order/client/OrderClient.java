@@ -11,5 +11,5 @@ public interface OrderClient {
     OrderDetailDto orderDetail(@RequestParam("orderId") long orderId);
 
     @RequestMapping(value = "/order/miaosha/do_miaosha", method = RequestMethod.POST, consumes = "application/json")
-    OrderDetailDto doMiaosha(@RequestParam("goodsId") long goodsId);
+    Integer doMiaosha(@RequestParam("goodsId") long goodsId);
 }
