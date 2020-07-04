@@ -182,7 +182,11 @@ public class GoodsController {
     @GetMapping(value = "/showList")
     @ResponseBody
     public List<GoodsDto> showList(){
-
+        try{
+            Thread.sleep(2000);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
         List<GoodsDto> goodsDtoList = goodsService.listGoodsDto();
 
         return goodsDtoList;

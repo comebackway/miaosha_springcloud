@@ -14,7 +14,7 @@ spring:
           force-pull: true
       label : master
   rabbitmq:
-    host: 120.78.148.129
+    host: 47.106.82.160
     port: 5672
     username: guest
     password: guest

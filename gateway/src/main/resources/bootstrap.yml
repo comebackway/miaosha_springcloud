@@ -7,18 +7,23 @@ spring:
         enabled: true
         service-id: CONFIG
       profile: dev
+    bus:
+      id: ${vcap.application.name:${spring.application.name:application}}:${vcap.application.instance_index:${spring.cloud.config.profile:${local.server.port:${server:port:0}}}}:${vcap.application.instance_id:${random.value}}
+
 zuul:
   routes:
-#    aaaa:
-#      path: /haha/**
-#      serviceId: user
+    aaaa:
+      #sensitiveHeaders 敏感头的设置，默认Cookie和Authorization是敏感信息，也就是zuul会把他们过滤掉
+      sensitiveHeaders:
+      path: /haha/**
+      serviceId: user
 
-     USER: /haha/**
+     #USER: /haha/**
 
-  ignored-patterns:
-
-    - /haha/user/goods/to_list
-    - /user/user/goods/to_list
+#  ignored-patterns:
+#
+#    - /haha/user/goods/to_list
+#    - /user/user/goods/to_list
 
 
 
