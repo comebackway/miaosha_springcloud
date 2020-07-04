@@ -2,21 +2,56 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9c000a3b-f101-415d-b8c9-50276ca9d844" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../gateway/src/main/java/self/lcw/gateway/PostFilter/addResponseHeaderFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../gateway/src/main/java/self/lcw/gateway/PreFilter/RateLimitFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../gateway/src/main/java/self/lcw/gateway/PreFilter/TokenFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../gateway/src/main/java/self/lcw/gateway/config/CorsConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../gateway-dev.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../product-dev.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_afterburner_2_11_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_netflix_hystrix_hystrix_javanica_1_5_18.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_netflix_hystrix_hystrix_metrics_event_stream_1_5_18.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_netflix_hystrix_hystrix_serialization_1_5_18.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_reactivex_rxjava_reactive_streams_1_2_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_zipkin_brave_brave_5_12_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_zipkin_brave_brave_context_slf4j_5_12_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_zipkin_brave_brave_instrumentation_http_5_12_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_zipkin_brave_brave_instrumentation_httpasyncclient_5_12_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_zipkin_brave_brave_instrumentation_httpclient_5_12_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_zipkin_brave_brave_instrumentation_jms_5_12_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_zipkin_brave_brave_instrumentation_kafka_clients_5_12_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_zipkin_brave_brave_instrumentation_kafka_streams_5_12_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_zipkin_brave_brave_instrumentation_messaging_5_12_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_zipkin_brave_brave_instrumentation_rpc_5_12_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_zipkin_brave_brave_instrumentation_servlet_5_12_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_zipkin_brave_brave_instrumentation_spring_rabbit_5_12_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_zipkin_brave_brave_instrumentation_spring_web_5_12_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_zipkin_brave_brave_instrumentation_spring_webmvc_5_12_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_zipkin_reporter2_zipkin_reporter_2_15_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_zipkin_reporter2_zipkin_reporter_brave_2_15_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_zipkin_reporter2_zipkin_reporter_metrics_micrometer_2_15_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_zipkin_reporter2_zipkin_sender_activemq_client_2_15_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_zipkin_reporter2_zipkin_sender_amqp_client_2_15_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_zipkin_reporter2_zipkin_sender_kafka_2_15_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_zipkin_zipkin2_zipkin_2_21_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjrt_1_9_5.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_sleuth_core_2_2_3_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_sleuth_zipkin_2_2_3_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_hystrix_1_4_7_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_netflix_hystrix_2_2_3_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_sleuth_2_2_3_RELEASE.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_zipkin_2_2_3_RELEASE.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../config/basedir" beforeDir="false" afterPath="$PROJECT_DIR$/../config/basedir" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../config/configserver/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../config/configserver/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/src/main/java/self/lcw/gateway/GatewayApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/java/self/lcw/gateway/GatewayApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../gateway/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../gateway/src/main/resources/bootstrap.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../order/server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../order/server/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../order/server/src/main/java/self/lcw/order/server/ServerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../order/server/src/main/java/self/lcw/order/server/ServerApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../order/server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../order/server/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../product/server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../product/server/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../product/server/src/main/java/self/lcw/product/server/controller/GoodsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../product/server/src/main/java/self/lcw/product/server/controller/GoodsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../product/server/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../product/server/src/main/resources/bootstrap.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/server/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/self/lcw/user/server/ServerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/self/lcw/user/server/ServerApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/self/lcw/user/server/controller/MiaoshaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/self/lcw/user/server/controller/MiaoshaController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/classes/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/target/classes/self/lcw/user/server/ServerApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/classes/self/lcw/user/server/ServerApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/target/classes/self/lcw/user/server/controller/MiaoshaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/server/target/classes/self/lcw/user/server/controller/MiaoshaController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,6 +179,8 @@
       <workItem from="1593520041486" duration="727000" />
       <workItem from="1593604754959" duration="631000" />
       <workItem from="1593665443435" duration="270000" />
+      <workItem from="1593847867225" duration="1742000" />
+      <workItem from="1593850446100" duration="2364000" />
     </task>
     <servers />
   </component>
@@ -163,37 +200,45 @@
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state x="534" y="360" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.0.1500.960@0.0.1500.960" timestamp="1592823997090" />
-    <state width="1444" height="252" key="GridCell.Tab.0.bottom" timestamp="1593607573944">
-      <screen x="0" y="0" width="1500" height="960" />
+    <state width="2518" height="398" key="GridCell.Tab.0.bottom" timestamp="1593851903024">
+      <screen x="3000" y="0" width="2560" height="1400" />
     </state>
+    <state width="2518" height="398" key="GridCell.Tab.0.bottom/0.0.1500.960/3000.0.2560.1400@3000.0.2560.1400" timestamp="1593851903024" />
     <state width="1444" height="252" key="GridCell.Tab.0.bottom/0.0.1500.960@0.0.1500.960" timestamp="1593607573944" />
-    <state width="1444" height="252" key="GridCell.Tab.0.center" timestamp="1593607573944">
-      <screen x="0" y="0" width="1500" height="960" />
+    <state width="2518" height="398" key="GridCell.Tab.0.center" timestamp="1593851903023">
+      <screen x="3000" y="0" width="2560" height="1400" />
     </state>
+    <state width="2518" height="398" key="GridCell.Tab.0.center/0.0.1500.960/3000.0.2560.1400@3000.0.2560.1400" timestamp="1593851903023" />
     <state width="1444" height="252" key="GridCell.Tab.0.center/0.0.1500.960@0.0.1500.960" timestamp="1593607573944" />
-    <state width="1444" height="252" key="GridCell.Tab.0.left" timestamp="1593607573944">
-      <screen x="0" y="0" width="1500" height="960" />
+    <state width="2518" height="398" key="GridCell.Tab.0.left" timestamp="1593851903023">
+      <screen x="3000" y="0" width="2560" height="1400" />
     </state>
+    <state width="2518" height="398" key="GridCell.Tab.0.left/0.0.1500.960/3000.0.2560.1400@3000.0.2560.1400" timestamp="1593851903023" />
     <state width="1444" height="252" key="GridCell.Tab.0.left/0.0.1500.960@0.0.1500.960" timestamp="1593607573944" />
-    <state width="1444" height="252" key="GridCell.Tab.0.right" timestamp="1593607573944">
-      <screen x="0" y="0" width="1500" height="960" />
+    <state width="2518" height="398" key="GridCell.Tab.0.right" timestamp="1593851903023">
+      <screen x="3000" y="0" width="2560" height="1400" />
     </state>
+    <state width="2518" height="398" key="GridCell.Tab.0.right/0.0.1500.960/3000.0.2560.1400@3000.0.2560.1400" timestamp="1593851903023" />
     <state width="1444" height="252" key="GridCell.Tab.0.right/0.0.1500.960@0.0.1500.960" timestamp="1593607573944" />
-    <state width="1444" height="252" key="GridCell.Tab.1.bottom" timestamp="1593607573945">
-      <screen x="0" y="0" width="1500" height="960" />
+    <state width="2518" height="398" key="GridCell.Tab.1.bottom" timestamp="1593851903026">
+      <screen x="3000" y="0" width="2560" height="1400" />
     </state>
+    <state width="2518" height="398" key="GridCell.Tab.1.bottom/0.0.1500.960/3000.0.2560.1400@3000.0.2560.1400" timestamp="1593851903026" />
     <state width="1444" height="252" key="GridCell.Tab.1.bottom/0.0.1500.960@0.0.1500.960" timestamp="1593607573945" />
-    <state width="1444" height="252" key="GridCell.Tab.1.center" timestamp="1593607573945">
-      <screen x="0" y="0" width="1500" height="960" />
+    <state width="2518" height="398" key="GridCell.Tab.1.center" timestamp="1593851903024">
+      <screen x="3000" y="0" width="2560" height="1400" />
     </state>
+    <state width="2518" height="398" key="GridCell.Tab.1.center/0.0.1500.960/3000.0.2560.1400@3000.0.2560.1400" timestamp="1593851903024" />
     <state width="1444" height="252" key="GridCell.Tab.1.center/0.0.1500.960@0.0.1500.960" timestamp="1593607573945" />
-    <state width="1444" height="252" key="GridCell.Tab.1.left" timestamp="1593607573944">
-      <screen x="0" y="0" width="1500" height="960" />
+    <state width="2518" height="398" key="GridCell.Tab.1.left" timestamp="1593851903024">
+      <screen x="3000" y="0" width="2560" height="1400" />
     </state>
+    <state width="2518" height="398" key="GridCell.Tab.1.left/0.0.1500.960/3000.0.2560.1400@3000.0.2560.1400" timestamp="1593851903024" />
     <state width="1444" height="252" key="GridCell.Tab.1.left/0.0.1500.960@0.0.1500.960" timestamp="1593607573944" />
-    <state width="1444" height="252" key="GridCell.Tab.1.right" timestamp="1593607573945">
-      <screen x="0" y="0" width="1500" height="960" />
+    <state width="2518" height="398" key="GridCell.Tab.1.right" timestamp="1593851903025">
+      <screen x="3000" y="0" width="2560" height="1400" />
     </state>
+    <state width="2518" height="398" key="GridCell.Tab.1.right/0.0.1500.960/3000.0.2560.1400@3000.0.2560.1400" timestamp="1593851903025" />
     <state width="1444" height="252" key="GridCell.Tab.1.right/0.0.1500.960@0.0.1500.960" timestamp="1593607573945" />
     <state x="281" y="136" key="Maven.ArtifactSearchDialog" timestamp="1592828067790">
       <screen x="0" y="0" width="1500" height="960" />
@@ -208,5 +253,9 @@
       <screen x="0" y="0" width="1500" height="960" />
     </state>
     <state x="116" y="182" key="new project wizard/0.0.1500.960@0.0.1500.960" timestamp="1592801482093" />
+    <state x="3938" y="331" key="run.anything.popup" timestamp="1593851194243">
+      <screen x="3000" y="0" width="2560" height="1400" />
+    </state>
+    <state x="3938" y="331" key="run.anything.popup/0.0.1500.960/3000.0.2560.1400@3000.0.2560.1400" timestamp="1593851194243" />
   </component>
 </project>

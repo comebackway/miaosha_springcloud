@@ -1,5 +1,6 @@
 package self.lcw.user.server.controller;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,6 +27,7 @@ public class MiaoshaController {
 
     @RequestMapping("/do_miaosha")
     @ResponseBody
+    @HystrixCommand
     public Result<Integer> doMiaosha(User user, @RequestParam("goodsId") long goodsId){
         System.out.println("goodsId"+goodsId);
         Integer res = orderClient.doMiaosha(goodsId);

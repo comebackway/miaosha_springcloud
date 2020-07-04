@@ -183,7 +183,7 @@ public class GoodsController {
     @ResponseBody
     public List<GoodsDto> showList(){
         try{
-            Thread.sleep(2000);
+            //Thread.sleep(2000);
         }catch (Exception e){
             e.printStackTrace();
         }

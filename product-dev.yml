@@ -1,6 +1,6 @@
 spring:
   application:
-    name: user
+    name: product
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
@@ -23,36 +23,23 @@ spring:
     port: 5672
     username: guest
     password: guest
-  zipkin:
-    base-url: http://47.106.82.160:9411/
-
 
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/
-    eureka-server-connect-timeout-seconds: 60000
+
 
 mybatis:
-  type-aliases-package: self.lcw.user.server.entity,self.lcw.user.common
+  type-aliases-package: self.lcw.product.server.entity,self.lcw.product.common
   configuration:
     map-underscore-to-camel-case: true
     default-fetch-size: 100
-    default-statement-timeout: 30000
-  mapper-locations: classpath:/user/dao/*.xml
+    default-statement-timeout: 3000
+  mapper-locations: classpath:/product/dao/*.xml
 
 server:
   servlet:
-    context-path: /user
-
-hystrix:
-  command:
-    default:
-      execution:
-        isolation:
-          thread:
-            timeoutInMilliseconds: 6000
-
-logging:
-  level:
-    org.springframework.cloud.netflix.fegin: debug #只把这个包下的日志级别改成debug
+    context-path: /product
+    
+env: dev2
