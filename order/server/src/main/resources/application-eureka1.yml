@@ -1,6 +1,6 @@
 spring:
   application:
-    name: user
+    name: order
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
@@ -23,37 +23,36 @@ spring:
     port: 5672
     username: guest
     password: guest
-  zipkin:
-    base-url: http://47.106.82.160:9411/
-  sleuth:
-    sampler:
-      rate: 10
+  cloud:
+    stream:
+      bindings:
+        myMessageStream: #myMessgaeStream 这个属性要对应得上自己设定的streamclient里边定义的消息名称，不然无法分组
+          group: order #order这个随意命名
+#hystrix:
+#  command:
+#    default:
+#      execution:
+#        isolation:
+#          thread:
+#            timeoutInMilliseconds: 5000
 
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/
-    eureka-server-connect-timeout-seconds: 60000
+
 
 mybatis:
-  type-aliases-package: self.lcw.user.server.entity,self.lcw.user.common
+  type-aliases-package: self.lcw.order.server.entity,self.lcw.order.common
   configuration:
     map-underscore-to-camel-case: true
     default-fetch-size: 100
     default-statement-timeout: 30000
-  mapper-locations: classpath:/user/dao/*.xml
+  mapper-locations: classpath:/order/dao/*.xml
 
 server:
   servlet:
-    context-path: /user
-
-hystrix:
-  command:
-    default:
-      execution:
-        isolation:
-          thread:
-            timeoutInMilliseconds: 6000
+    context-path: /order
 
 feign:
   client:
@@ -63,6 +62,21 @@ feign:
         readTimeout: 5000
         loggerLevel: basic
 
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 3000
+
+    haha:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 3000
 logging:
   level:
     org.springframework.cloud.netflix.fegin: debug #只把这个包下的日志级别改成debug
+
+env: sit

@@ -55,6 +55,14 @@ hystrix:
           thread:
             timeoutInMilliseconds: 6000
 
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+        loggerLevel: basic
+
 logging:
   level:
     org.springframework.cloud.netflix.fegin: debug #只把这个包下的日志级别改成debug
